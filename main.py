@@ -75,7 +75,9 @@ async def on_message(message):
         else:
             await message.author.send(
                 f"Your video entry for category {category} in the Meta Shift Competition has been updated to {cleaned_url}.")
-        await message.delete()
+
+        if message.channel.id in [1079429447368847391, 1081618378688561203, 1080949544356941874]:
+            await message.delete()
 
     except ValueError:
         pass
